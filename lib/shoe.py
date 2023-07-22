@@ -5,12 +5,10 @@ class Shoe:
         self.size = size
         self.brand = brand
     
-    @property
-    def size(self):
+    def get_size(self):
         return self._size
     
-    @size.setter
-    def size(self, size):
+    def set_size(self, size):
         if type(size) in (int, int):
             self._size = size
         else:
@@ -19,3 +17,5 @@ class Shoe:
     def cobble(self):
         self.condition = "New"
         print("Your shoe is as good as new!")
+    
+    size = property(get_size, set_size)
